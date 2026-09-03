@@ -1,0 +1,49 @@
+[environment]
+python_executable = "/root/paddlejob/inference-public/jianghaitao/miniconda3/envs/sglang-oss/bin/python"
+sglang_repo = "/root/paddlejob/inference-public/jianghaitao/sglang"
+dataset_root = "/root/paddlejob/inference-public/wangyanpeng04/datasets/speed-bench"
+# BenchAPP 自带的单轮任务数据集；任务发压会转换成 workspace/dataset_cache 下的 OpenAI JSONL。
+builtin_dataset_root = "datasets"
+workspace_root = "benchmark_workspace"
+# 可改为多台机器都能访问的共享存储绝对路径。
+saved_results_root = "benchmark_workspace/saved_results"
+
+[defaults]
+host = "127.0.0.1"
+port = 30131
+ready_timeout = 1800
+dataset_size = "32k"
+category = ""
+num_prompts = 600
+output_len = 4096
+max_concurrency = 24
+request_rate = "inf"
+seed = 42
+warmup_requests = 1
+extra_request_body = "{\"temperature\":0,\"top_p\":1.0,\"stream_options\":{\"include_usage\":true}}"
+# 是否在命令中加上 --output-details。它只用于客户端 SSE/ITL 排查；精确逐 step
+# 曲线来自服务端 --speculative-decoding-stats=detailed，不依赖这个开关。
+output_details = false
+
+# 结果表格“对比列”的初始键。记录本身始终保存 result.jsonl 里全部可比较的标量
+#（约 368 项），这里只决定首次进入页面时默认显示哪些，表格上可随时增减。
+# 键名是 core/result_keys.py 拍平后的 client.* / server.* 点分键。
+[comparison]
+default_keys = [
+    # 与旧版对比表一致的 10 个客户端指标
+    "client.accept_length",
+    "client.decode_speed_toks",
+    "client.request_throughput",
+    "client.input_throughput",
+    "client.output_throughput",
+    "client.total_throughput",
+    "client.mean_e2e_latency_ms",
+    "client.mean_ttft_ms",
+    "client.mean_tpot_ms",
+    "client.mean_itl_ms",
+    # 服务端指标对比；TP/DP/EP 是保存结果时人工填写的固有配置，不在此处选择
+    "server.page_size",
+    "server.attention_backend",
+    "server.speculative_algorithm",
+    "server.speculative_num_draft_tokens",
+]

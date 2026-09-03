@@ -1,0 +1,7 @@
+__pycache__/
+.venv/
+*.pyc
+bench_app.db
+backups/
+benchmark_workspace/
+datasets/
