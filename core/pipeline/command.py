@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Sequence
 
-from bench_app.core.pipeline.models import (
+from .models import (
     BenchmarkParameters,
     CommandValidationError,
     PipelineError,
@@ -18,7 +18,7 @@ from bench_app.core.pipeline.models import (
     RUN_ID_PATTERN,
     ValidatedCommand,
 )
-from bench_app.core.pipeline.datasets import (
+from .datasets import (
     PERFORMANCE_FAMILY,
     SPEED_BENCH_SIZES,
     TASK_EVALUATION_FAMILY,

@@ -7,12 +7,12 @@ from pathlib import Path
 APP_ROOT = Path(__file__).resolve().parent.parent
 PAGE_RENDERERS = {
     "4_benchmark_pipeline.py": (
-        "bench_app.ui.pipeline.launch",
+        "ui.pipeline.launch",
         "render_launch_page",
     ),
-    "5_benchmark_jobs.py": ("bench_app.ui.pipeline.jobs", "render_jobs_page"),
+    "5_benchmark_jobs.py": ("ui.pipeline.jobs", "render_jobs_page"),
     "6_benchmark_results.py": (
-        "bench_app.ui.pipeline.results",
+        "ui.pipeline.results",
         "render_results_page",
     ),
 }
@@ -30,7 +30,7 @@ def test_pipeline_pages_use_explicit_render_entrypoints() -> None:
             and node.func.id.startswith("render_")
         }
         renderer_imports = {
-            (node.module, alias.name)
+            (node.level, node.module, alias.name)
             for node in tree.body
             if isinstance(node, ast.ImportFrom)
             for alias in node.names
@@ -38,7 +38,7 @@ def test_pipeline_pages_use_explicit_render_entrypoints() -> None:
         }
 
         assert renderer_calls == {expected_renderer}
-        assert renderer_imports == {(expected_module, expected_renderer)}
+        assert renderer_imports == {(2, expected_module, expected_renderer)}
         assert "runpy" not in source
         assert "_PIPELINE_PAGE_MODE" not in source
 

@@ -1,0 +1,25 @@
+{
+  "run_id": "evaluation-1",
+  "parameters": {
+    "host": "127.0.0.1",
+    "port": 30131,
+    "benchmark_family": "performance",
+    "dataset_id": "speed-bench",
+    "dataset_variant": "1k",
+    "category": "",
+    "num_prompts": 20,
+    "output_len": 128,
+    "max_concurrency": 4,
+    "request_rate": "inf",
+    "seed": 42,
+    "warmup_requests": 1,
+    "extra_request_body": "{\"temperature\":0,\"top_p\":1.0,\"stream_options\":{\"include_usage\":true}}",
+    "output_details": false
+  },
+  "metadata": {
+    "model_name": "replace-with-your-model",
+    "tp_size": 1,
+    "additional": "API example"
+  },
+  "timeout_seconds": 1800
+}

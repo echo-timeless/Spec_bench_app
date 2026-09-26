@@ -9,14 +9,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-from bench_app.core.pipeline.artifacts import _exclusive_file_lock
-from bench_app.core.pipeline.comparison import (
+from .artifacts import _exclusive_file_lock
+from .comparison import (
     _SAVED_METRIC_KEYS,
     _finite_float,
     benchmark_result_metrics,
     comparison_values,
 )
-from bench_app.core.pipeline.models import (
+from .models import (
     BenchmarkJobMetadata,
     BenchmarkResultView,
     PipelineError,
@@ -27,7 +27,7 @@ from bench_app.core.pipeline.models import (
     _configuration_size,
     build_result_name,
 )
-from bench_app.core.result_keys import CLIENT_PREFIX, CONFIGURATION_ONLY_KEYS
+from ..result_keys import CLIENT_PREFIX, CONFIGURATION_ONLY_KEYS
 
 _SAVED_RESULT_SCHEMA_VERSION = 2
 

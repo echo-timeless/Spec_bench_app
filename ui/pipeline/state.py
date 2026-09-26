@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import streamlit as st
 
-from bench_app.core.pipeline import (
+from ...core.pipeline import (
     PipelineError,
     PipelineSettings,
     build_job_metadata,

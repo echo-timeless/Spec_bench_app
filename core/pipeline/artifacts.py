@@ -10,17 +10,17 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Any, Mapping
 
-from bench_app.core.pipeline.comparison import (
+from .comparison import (
     benchmark_result_metrics,
     comparison_values,
 )
-from bench_app.core.pipeline.models import (
+from .models import (
     BenchmarkResultView,
     PipelineError,
     RUN_ID_PATTERN,
     SavedRunArtifacts,
 )
-from bench_app.core.step_curve import (
+from ..step_curve import (
     accept_curves_from_dict,
     accept_curves_to_dict,
     accept_length_curves,

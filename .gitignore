@@ -5,3 +5,4 @@ bench_app.db
 backups/
 benchmark_workspace/
 datasets/
+nohup.out

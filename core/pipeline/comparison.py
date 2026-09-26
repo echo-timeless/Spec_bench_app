@@ -5,8 +5,8 @@ from __future__ import annotations
 import math
 from typing import Any, Mapping
 
-from bench_app.core.pipeline.models import PipelineError
-from bench_app.core.result_keys import (
+from .models import PipelineError
+from ..result_keys import (
     CLIENT_PREFIX,
     extract_comparison_values,
     is_numeric_value,

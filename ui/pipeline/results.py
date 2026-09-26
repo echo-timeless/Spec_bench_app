@@ -5,7 +5,7 @@ from __future__ import annotations
 import pandas as pd
 import streamlit as st
 
-from bench_app.core.pipeline import (
+from ...core.pipeline import (
     PipelineError,
     PipelineSettings,
     ResultRecordConflictError,
@@ -17,8 +17,8 @@ from bench_app.core.pipeline import (
     revise_saved_benchmark_result,
     saved_run_artifacts,
 )
-from bench_app.core.result_keys import format_value
-from bench_app.ui.pipeline.components import (
+from ...core.result_keys import format_value
+from .components import (
     _column_label,
     _comparison_rows,
     _confirm_delete_saved_result,
@@ -28,7 +28,7 @@ from bench_app.ui.pipeline.components import (
     _render_accept_curves,
     _saved_record_label,
 )
-from bench_app.ui.pipeline.state import (
+from .state import (
     BASELINE_STATE_KEY,
     COLUMN_STATE_KEY,
     DIFF_ONLY_STATE_KEY,

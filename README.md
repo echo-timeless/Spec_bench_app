@@ -9,6 +9,12 @@
 | 发压任务与日志 | 管理当前进程中的 Job，查看状态、命令和实时日志并保存成功结果 |
 | 结果查询与对比 | 恢复已保存结果、原始日志和曲线，修改说明并进行多项对比 |
 
+## HTTP API
+
+HTTP API 面向自动评测：提交、查询、获取结果和取消；评测结束后自动持久化，成功结果自动加入结果列表。
+请求体模板见 [evaluation_request.json](examples/evaluation_request.json)；Agent 按 [API.md](API.md) 的完整终端命令完成提交、查询和取消，无需 Python 客户端。
+在本目录运行 `python api.py --host 127.0.0.1 --port 8765`，详见 [HTTP API 使用说明](API.md)。
+
 ## SGLang 依赖：PR #34814
 
 BenchAPP 的逐 step 曲线和请求级统计依赖 SGLang PR

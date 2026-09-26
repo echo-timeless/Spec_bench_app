@@ -7,7 +7,7 @@ from typing import Any, Iterable, Sequence
 import plotly.graph_objects as go
 import streamlit as st
 
-from bench_app.core.pipeline import (
+from ...core.pipeline import (
     STATUS_FAILED,
     STATUS_RUNNING,
     STATUS_STOPPED,
@@ -18,13 +18,13 @@ from bench_app.core.pipeline import (
     list_saved_benchmark_results,
     numeric_change_percent,
 )
-from bench_app.core.result_keys import (
+from ...core.result_keys import (
     CLIENT_PREFIX,
     format_value,
     split_key,
 )
-from bench_app.core.step_curve import AcceptCurves, RequestCurve
-from bench_app.ui.pipeline.state import (
+from ...core.step_curve import AcceptCurves, RequestCurve
+from .state import (
     BASELINE_STATE_KEY,
     HISTORY_NOTICE_STATE_KEY,
 )

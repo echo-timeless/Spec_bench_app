@@ -1,6 +1,6 @@
 """Public SPEED-Bench Pipeline API."""
 
-from bench_app.core.pipeline.command import (
+from .command import (
     DATASET_SIZES,
     THROUGHPUT_CATEGORIES,
     build_command_argv,
@@ -12,7 +12,7 @@ from bench_app.core.pipeline.command import (
     parse_command,
     validate_command,
 )
-from bench_app.core.pipeline.datasets import (
+from .datasets import (
     DATASET_SPECS,
     PERFORMANCE_FAMILY,
     SPEED_BENCH_SIZES,
@@ -23,12 +23,12 @@ from bench_app.core.pipeline.datasets import (
     pending_dataset_specs,
     selectable_dataset_specs,
 )
-from bench_app.core.pipeline.config import (
+from .config import (
     CONFIG_PATH,
     default_parameters,
     load_settings,
 )
-from bench_app.core.pipeline.models import (
+from .models import (
     STATUS_FAILED,
     STATUS_RUNNING,
     STATUS_STOPPED,
@@ -51,21 +51,21 @@ from bench_app.core.pipeline.models import (
     build_result_name,
     job_metadata_from_saved_result,
 )
-from bench_app.core.pipeline.artifacts import (
+from .artifacts import (
     load_or_create_result_view,
     parse_result_file,
     read_log_tail,
     result_view_path,
     saved_run_artifacts,
 )
-from bench_app.core.pipeline.comparison import (
+from .comparison import (
     benchmark_result_metrics,
     comparison_values,
     numeric_change_percent,
     relative_change_percent,
     result_summary,
 )
-from bench_app.core.pipeline.results import (
+from .results import (
     build_saved_benchmark_result,
     delete_saved_benchmark_result,
     list_saved_benchmark_results,
@@ -73,7 +73,7 @@ from bench_app.core.pipeline.results import (
     revise_saved_benchmark_result,
     save_benchmark_result,
 )
-from bench_app.core.pipeline.runner import BenchmarkRunner
+from .runner import BenchmarkRunner
 
 __all__ = [
     "CONFIG_PATH",

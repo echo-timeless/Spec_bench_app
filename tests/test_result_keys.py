@@ -14,7 +14,7 @@ from pathlib import Path
 
 import pytest
 
-from bench_app.core.benchmark_pipeline import (
+from ..core.benchmark_pipeline import (
     PipelineError,
     build_saved_benchmark_result,
     comparison_values,
@@ -22,7 +22,7 @@ from bench_app.core.benchmark_pipeline import (
     numeric_change_percent,
     save_benchmark_result,
 )
-from bench_app.core.result_keys import (
+from ..core.result_keys import (
     CLIENT_PREFIX,
     SERVER_PREFIX,
     canonical_server_info,
@@ -408,7 +408,7 @@ def test_real_result_files_flatten_and_serialize() -> None:
 
 @pytest.mark.skipif(not _real_result_files(), reason="no recorded benchmark run")
 def test_configured_default_keys_resolve_against_a_real_record() -> None:
-    from bench_app.core.benchmark_pipeline import load_settings
+    from ..core.benchmark_pipeline import load_settings
 
     settings = load_settings()
     values = comparison_values(

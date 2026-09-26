@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-from bench_app.core.step_curve import AcceptCurves
+from ..step_curve import AcceptCurves
 
 STATUS_RUNNING = "Running"
 STATUS_SUCCEEDED = "Succeeded"

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import streamlit as st
 
-from bench_app.core.pipeline import (
+from ...core.pipeline import (
     PERFORMANCE_FAMILY,
     SPEED_BENCH_SIZES,
     TASK_EVALUATION_FAMILY,
@@ -16,13 +16,13 @@ from bench_app.core.pipeline import (
     generate_command,
     validate_command,
 )
-from bench_app.core.pipeline.datasets import (
+from ...core.pipeline.datasets import (
     get_dataset_spec,
     pending_dataset_specs,
     selectable_dataset_specs,
 )
-from bench_app.core.pipeline_runtime import get_benchmark_runner
-from bench_app.ui.pipeline.state import (
+from ...core.pipeline_runtime import get_benchmark_runner
+from .state import (
     COMMAND_WIDGET_KEY,
     NEW_JOB_METADATA_PREFIX,
     _initialize_job_state,

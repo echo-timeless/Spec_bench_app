@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import streamlit as st
 
-from bench_app.core.pipeline.runner import BenchmarkRunner
+from .pipeline.runner import BenchmarkRunner
 
 
 @st.cache_resource

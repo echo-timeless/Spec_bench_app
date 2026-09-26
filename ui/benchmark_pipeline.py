@@ -1,6 +1,6 @@
 """Compatibility facade for the focused Pipeline UI modules."""
 
-from bench_app.ui.pipeline import (
+from .pipeline import (
     render_jobs_page,
     render_launch_page,
     render_results_page,

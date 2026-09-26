@@ -11,8 +11,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from bench_app.core.pipeline.command import validate_command
-from bench_app.core.pipeline.models import (
+from .command import validate_command
+from .models import (
     STATUS_FAILED,
     STATUS_RUNNING,
     STATUS_STOPPED,
@@ -24,7 +24,7 @@ from bench_app.core.pipeline.models import (
     RunSnapshot,
     ValidatedCommand,
 )
-from bench_app.core.pipeline.artifacts import (
+from .artifacts import (
     load_or_create_result_view,
     parse_result_file,
     read_log_tail,

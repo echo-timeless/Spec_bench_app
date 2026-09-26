@@ -5,7 +5,7 @@ from __future__ import annotations
 import pandas as pd
 import streamlit as st
 
-from bench_app.core.pipeline import (
+from ...core.pipeline import (
     STATUS_RUNNING,
     STATUS_SUCCEEDED,
     BenchmarkRunner,
@@ -16,12 +16,12 @@ from bench_app.core.pipeline import (
     build_saved_benchmark_result,
     save_benchmark_result,
 )
-from bench_app.core.pipeline_runtime import get_benchmark_runner
-from bench_app.ui.pipeline.components import (
+from ...core.pipeline_runtime import get_benchmark_runner
+from .components import (
     _load_saved_results_cached,
     _show_status,
 )
-from bench_app.ui.pipeline.state import (
+from .state import (
     LOG_TAIL_BYTES,
     _initialize_job_state,
     _load_page_settings,

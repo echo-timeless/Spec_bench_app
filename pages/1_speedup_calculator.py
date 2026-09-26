@@ -7,10 +7,13 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-# Ensure bench_app is importable
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+# Streamlit executes pages as scripts, without a package context.
+if not __package__:
+    _app_root = Path(__file__).resolve().parent.parent
+    sys.path.insert(0, str(_app_root.parent))
+    __package__ = f"{_app_root.name}.pages"
 
-from bench_app.core.speedup import (
+from ..core.speedup import (
     compute_avg_accept_length,
     compute_incremental_table,
     compute_speedup,

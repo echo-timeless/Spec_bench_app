@@ -2,7 +2,7 @@
 
 import pytest
 
-from bench_app.core.speedup import (
+from ..core.speedup import (
     compute_avg_accept_length,
     compute_incremental_table,
     compute_speedup,

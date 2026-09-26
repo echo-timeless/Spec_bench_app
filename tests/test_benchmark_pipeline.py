@@ -10,10 +10,10 @@ from pathlib import Path
 
 import pytest
 
-import bench_app.core.pipeline.artifacts as artifacts_module
-import bench_app.core.pipeline.results as results_module
-import bench_app.core.pipeline.runner as runner_module
-from bench_app.core.benchmark_pipeline import (
+from ..core.pipeline import artifacts as artifacts_module
+from ..core.pipeline import results as results_module
+from ..core.pipeline import runner as runner_module
+from ..core.benchmark_pipeline import (
     STATUS_STOPPED,
     STATUS_SUCCEEDED,
     BenchmarkParameters,

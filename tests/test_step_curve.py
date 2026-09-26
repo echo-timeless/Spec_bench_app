@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from bench_app.core.step_curve import (
+from ..core.step_curve import (
     accept_curves_from_dict,
     accept_curves_to_dict,
     accept_length_curves,

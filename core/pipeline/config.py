@@ -9,7 +9,7 @@ try:
 except ModuleNotFoundError:  # pragma: no cover - Python 3.10 fallback
     import tomli as tomllib
 
-from bench_app.core.pipeline.models import (
+from .models import (
     BenchmarkParameters,
     PipelineError,
     PipelineSettings,
